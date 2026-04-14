@@ -1,0 +1,135 @@
+/* General body styling */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Dark gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent scrollbars if content slightly overflows */
+}
+
+/* Calculator main container */
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 100px); /* 4 columns, each 100px wide */
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px); /* Display row + 5 button rows */
+    background-color: #1a1a1a; /* Dark background for the calculator body */
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Deep shadow for depth */
+    border: 1px solid #333;
+}
+
+/* Display area */
+.output {
+    grid-column: 1 / -1; /* Span across all columns */
+    background-color: #333; /* Dark background for the display */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 15px;
+    word-wrap: break-word;
+    word-break: all;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Inner shadow for display */
+}
+
+.output .previous-operand {
+    color: rgba(255, 255, 255, 0.75); /* Lighter color for previous input */
+    font-size: 1.5rem;
+    text-align: right;
+    min-height: 1.5em; /* Ensure space even if empty */
+}
+
+.output .current-operand {
+    color: white; /* Bright white for current input */
+    font-size: 3rem;
+    text-align: right;
+    min-height: 1.2em; /* Ensure space even if empty */
+}
+
+/* General button styling */
+.calculator-grid button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: none; /* Remove default button border */
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white */
+    color: white;
+    border-radius: 8px;
+    margin: 5px; /* Spacing between buttons */
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Subtle button shadow */
+}
+
+/* Hover effect for all buttons */
+.calculator-grid button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Active (click) effect for all buttons */
+.calculator-grid button:active {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(0.98); /* Slightly shrink on click */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); /* Smaller shadow on click */
+}
+
+/* Specific button types */
+
+/* Buttons that span two columns (e.g., AC, Equals) */
+.calculator-grid .span-two {
+    grid-column: span 2;
+}
+
+/* Operator buttons */
+.calculator-grid .operator {
+    background-color: #ff9500; /* Orange for operators */
+    color: white;
+}
+
+.calculator-grid .operator:hover {
+    background-color: #e08500; /* Darker orange on hover */
+}
+
+/* Clear button (AC) */
+.calculator-grid .clear {
+    background-color: #dc3545; /* Red for clear */
+}
+
+.calculator-grid .clear:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+/* Delete button (DEL) */
+.calculator-grid .delete {
+    background-color: #6c757d; /* Gray for delete */
+}
+
+.calculator-grid .delete:hover {
+    background-color: #5a6268; /* Darker gray on hover */
+}
+
+/* Equals button */
+.calculator-grid .equals {
+    background-color: #007bff; /* Blue for equals */
+}
+
+.calculator-grid .equals:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Number and Decimal buttons (default styling is fine, but can be overridden) */
+.calculator-grid .number,
+.calculator-grid .decimal {
+    /* Inherits general button styles */
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.calculator-grid .number:hover,
+.calculator-grid .decimal:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}

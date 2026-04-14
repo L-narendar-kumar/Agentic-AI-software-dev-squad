@@ -1,0 +1,124 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.input-section {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#newTaskInput {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#newTaskInput:focus {
+    border-color: #3498db;
+}
+
+#addTaskButton {
+    padding: 12px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#addTaskButton:hover {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+}
+
+#addTaskButton:active {
+    transform: translateY(0);
+}
+
+#taskList {
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+}
+
+.todo-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    word-break: break-word;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.todo-item:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.todo-item.completed {
+    text-decoration: line-through;
+    color: #95a5a6;
+    background-color: #e9ecef;
+    opacity: 0.8;
+}
+
+.todo-item span {
+    flex-grow: 1;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.todo-item button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: 10px;
+}
+
+.todo-item button:hover {
+    background-color: #c0392b;
+    transform: translateY(-1px);
+}
+
+.todo-item button:active {
+    transform: translateY(0);
+}
